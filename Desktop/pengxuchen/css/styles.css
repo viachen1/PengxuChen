@@ -70,7 +70,73 @@ h1 {
 }
 
 
+.main-nav {
+    position: sticky;
+    top: 0;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+}
 
+.nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    margin: 0;
+    list-style: none;
+}
+
+.nav-link {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #1abc9c;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #1abc9c;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-link.active {
+    color: #1abc9c;
+    background: rgba(26, 188, 156, 0.1);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-list {
+        gap: 1rem;
+        padding: 0.8rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
 
 .intro {
     display: grid;
@@ -207,6 +273,158 @@ h1 {
     background: rgba(255,255,255,0.2);
     transform: translateY(-3px);
 }
+
+
+.experience {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 40px;
+    margin: 8vh auto;
+    max-width: 1200px;
+}
+
+.timeline-item {
+    position: relative;
+    padding: 30px 40px;
+    margin: 25px 0;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateX(10px);
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 30px;
+    width: 30px;
+    height: 30px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231abc9c"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+}
+
+.timeline-header {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.company {
+    color: #ecf0f1;
+    font-size: 1.4rem;
+    margin: 0 0 5px;
+}
+
+.position {
+    color: #ecf0f1;
+    font-size: 1.1rem;
+    margin: 0 0 10px;
+    font-weight: 300;
+}
+
+.timeline-meta {
+    display: flex;
+    gap: 20px;
+    color: #ecf0f1;
+    font-size: 0.9rem;
+}
+
+.achievement-list {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.achievement-list li {
+    color: #ecf0f1;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    padding-left: 10px;
+    position: relative;
+}
+
+.achievement-list li::before {
+    content: "▹";
+    color: #ecf0f1;
+    position: absolute;
+    left: -15px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .timeline-item {
+        padding: 20px;
+        margin: 20px 0;
+    }
+    
+    .timeline-item::before {
+        left: -10px;
+        top: 25px;
+        width: 20px;
+        height: 20px;
+    }
+    
+    .company {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+.download-certificate-btn {
+    position: absolute;
+    bottom: -25px;
+    right: 0;
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #3498db, #1abc9c);
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(26, 188, 156, 0.3);
+    font-size: 0.9rem;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.download-certificate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.5);
+    background: linear-gradient(135deg, #1abc9c, #3498db);
+}
+
+.download-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    fill: currentColor;
+}
+
+
+
+/* 调整时间线项定位 */
+.timeline-item {
+    position: relative;
+    padding-bottom: 60px; /* 为按钮留出空间 */
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .download-certificate-btn {
+        position: static;
+        margin-top: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .timeline-item {
+        padding-bottom: 30px;
+    }
+}
+
 
 .accordion {
     width: 100%;

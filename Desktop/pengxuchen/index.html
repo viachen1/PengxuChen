@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Doe - Portfolio</title>
+    <title>Pengxu Chen - Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="animated-background"></div>
-
+    
+    <nav class="main-nav">
+        <ul class="nav-list">
+            <li><a href="#about" class="nav-link active">About</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#resume" class="nav-link">Resume</a></li>
+        </ul>
+    </nav>
+    
     <header class="scroll-effect">
-        <h1>Welcome to My Digital Space</h1>
+        <h1>Welcome to My Digital Resume</h1>
     </header>
 
-    <section class="intro scroll-effect">
+    <section id="about" class="intro scroll-effect">
         <div class="profile-pic">
             <img id="profile-photo" src="img/photo1.jpg" alt="John Doe">
         </div>
@@ -24,12 +34,12 @@
         </div>
     </section>
 
-    <section class="education scroll-effect">
+    <section id="education" class="education scroll-effect">
         <h2>Academic Credentials</h2>
         <div class="diploma-container">
             <!-- 学士学位证书 -->
             <div class="diploma-item">
-                <a href="diplomas/bachelor.pdf" download class="diploma-link">
+                <a href="benke.pdf" download class="diploma-link">
                     <img src="img/benke.jpg" alt="Bachelor's Degree" class="diploma-img">
                 </a>
                 <h3 class="diploma-title">Bachelor of Information Technology</h3>
@@ -38,7 +48,7 @@
     
             <!-- 硕士学位证书 -->
             <div class="diploma-item">
-                <a href="diplomas/master.pdf" download class="diploma-link">
+                <a href="yanjiusheng.pdf" download class="diploma-link">
                     <img src="img/page-0.jpg" alt="Master's Degree" class="diploma-img">
                 </a>
                 <h3 class="diploma-title">Master of Business Information Systems</h3>
@@ -47,7 +57,74 @@
         </div>
     </section>
 
-    <section class="skills scroll-effect">
+
+    <section id="experience" class="experience scroll-effect">
+        <h2>Professional Journey</h2>
+        
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <h3 class="company">Mobalytics</h3>
+                <h4 class="position">Data Analyst Internship</h4>
+                <div class="timeline-meta">
+                    <span class="duration">Nov 2022 - Feb 2023</span>
+                    <span class="location">Los Angeles (Remote)</span>
+                </div>
+            </div>
+            <div class="timeline-content">
+                <ul class="achievement-list">
+                    <li>Conducted in-depth data analysis focusing on Web 3 and the Metaverse</li>
+                    <li>Developed predictive models for cryptocurrency trends using machine learning</li>
+                    <li>Created interactive dashboards with Tableau for executive reporting</li>
+                    <li>Optimized user retention strategies through behavioral analysis</li>
+                    <li>Collaborated with product teams to implement data-driven features</li>
+                </ul>
+                
+                <!-- 新增下载按钮 -->
+                <a href="Certificate of internship.pdf" 
+                   download 
+                   class="download-certificate-btn">
+                    <svg class="download-icon" viewBox="0 0 24 24">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Download Internship Certificate
+                </a>
+            </div>
+        </div>
+
+        <!-- AKA Studio经历 -->
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <h3 class="company">AKA Studio</h3>
+                <h4 class="position">Technical Leader (School Placement)</h4>
+                <div class="timeline-meta">
+                    <span class="duration">Feb 2024 - Jun 2024</span>
+                    <span class="location">Brisbane</span>
+                </div>
+            </div>
+            <div class="timeline-content">
+                <ul class="achievement-list">
+                    <li>Led development of Drag-and-Drop Menu Creation feature</li>
+                    <li>Implemented automated social media marketing system</li>
+                    <li>Conducted UX research with restaurant owners</li>
+                    <li>Designed dynamic pricing model for SaaS product</li>
+                    <li>Presented technical solutions to enterprise clients</li>
+                </ul>
+                
+                <!-- 新增项目说明书下载按钮 -->
+                <a href="AKA - Final Word Report.pdf" 
+                   download 
+                   class="download-certificate-btn">
+                    <svg class="download-icon" viewBox="0 0 24 24">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Download Project Specification
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="skills" class="skills scroll-effect">
         <h2>Technical Arsenal</h2>
         <div class="accordion">
             <div class="accordion-item">
@@ -89,11 +166,11 @@
         </div>
     </section>
 
-    <section class="resume scroll-effect">
+    <section id="resume" class="resume scroll-effect">
         <h2>Career Blueprint</h2>
-        <a href="resume.pdf" download class="download-btn">
+        <a href="CV Pengxu Chen.pdf" download class="download-btn">
             <span class="btn-text">Download Resume</span>
-            <span class="btn-icon">↓</span>
+            
         </a>
     </section>
 
