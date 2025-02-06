@@ -104,3 +104,33 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+
+const galleryItems = document.querySelectorAll('.gallery-item');
+const lightbox = document.createElement('div');
+lightbox.className = 'lightbox';
+lightbox.innerHTML = `
+    <span class="close-btn">&times;</span>
+    <img class="lightbox-image" src="" alt="">
+`;
+
+document.body.appendChild(lightbox);
+
+galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const fullSizeSrc = item.dataset.src;
+        lightbox.querySelector('img').src = fullSizeSrc;
+        lightbox.classList.add('active');
+    });
+});
+
+lightbox.querySelector('.close-btn').addEventListener('click', () => {
+    lightbox.classList.remove('active');
+});
+
+// 点击背景关闭
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+    }
+});
